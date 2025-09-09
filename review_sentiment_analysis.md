@@ -146,7 +146,7 @@ We need ways to account for other languagues or to remove non-english reviews. F
 from tqdm import tqdm
 import fasttext
 
-model = fasttext.load_model("C:/Users/Bruger/Documents/Programming portfolio/AirBnB/data//lid.176.bin")  # Make sure it's in your working directory
+model = fasttext.load_model("path/to/fasttext/dict/lid.176.bin")  # Make sure it's in your working directory
 
 def detect_language(text: str) -> str:
     if not isinstance(text, str) or text.strip() == "":
@@ -286,7 +286,7 @@ reviews_sentiments = en_reviews.group_by("listing_id").agg(
 
 )
 
-reviews_sentiments.write_csv("C:/Users/Bruger/Documents/Programming portfolio/AirBnB/data/review_sentiment.csv")
+reviews_sentiments.write_csv("path/to/disc/review_sentiment.csv")
 ```
 
 
@@ -305,5 +305,6 @@ reviews_sentiments
 }
 </style>
 <small>shape: (17_718, 4)</small><table border="1" class="dataframe"><thead><tr><th>listing_id</th><th>positive_reviews</th><th>neutral_reviews</th><th>negative_reviews</th></tr><tr><td>i64</td><td>i32</td><td>i32</td><td>i32</td></tr></thead><tbody><tr><td>972397314515315847</td><td>1</td><td>0</td><td>0</td></tr><tr><td>9407356</td><td>25</td><td>1</td><td>0</td></tr><tr><td>32029136</td><td>6</td><td>1</td><td>1</td></tr><tr><td>33851914</td><td>10</td><td>0</td><td>0</td></tr><tr><td>34813295</td><td>12</td><td>0</td><td>1</td></tr><tr><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr><td>33874452</td><td>21</td><td>0</td><td>1</td></tr><tr><td>939836032656880517</td><td>9</td><td>0</td><td>0</td></tr><tr><td>24751558</td><td>10</td><td>0</td><td>0</td></tr><tr><td>893185768164204700</td><td>1</td><td>0</td><td>0</td></tr><tr><td>23975040</td><td>28</td><td>0</td><td>0</td></tr></tbody></table></div>
+
 
 
